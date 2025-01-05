@@ -1,0 +1,13 @@
+<h1>Book a Slot</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Book Now</button>
+</form>
+
+<h2>Available Slots</h2>
+<ul>
+    {% for slot in available_slots %}
+        <li>{{ slot.date }} at {{ slot.time }}</li>
+    {% endfor %}
+</ul>
